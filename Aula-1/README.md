@@ -57,6 +57,7 @@ Após a definição dos parâmetros que descrevem o círculo, é necessário cri
 
 ### 2. Calcular o perimetro do circulo
 O perimetro do circulo é dado pela seguinte fórmula:
+
 $$ C = 2 \pi r $$
 
 No entanto, o valor do raio do círculo já faz parte da própria classe ``Circle``. Assim, podemos usar esta variável da classe sem a necessidade de a passar como parâmetro da função:
