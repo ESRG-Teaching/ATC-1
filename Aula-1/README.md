@@ -87,6 +87,7 @@ const double PI = acos(-1);
 ### 3. Calcular a área da superfície do círculo
 
 A área do circulo é dado pela seguinte fórmula:
+
 $$ A = \pi r^2\ $$
 
 Desta forma, a implementação desta função pode ser feita da seguinte forma:
