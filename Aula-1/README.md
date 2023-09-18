@@ -26,7 +26,7 @@ O primeiro passo para definir uma classe é considerar os detalhes que a descrev
 class Circle {
     float x;
     float y;
-    float radio;
+    float radius;
 };
 ```
 
@@ -34,22 +34,22 @@ Embora esta abordagem seja correta e funcional, é uma boa prática criar camada
 
 ```cpp
 struct FloatXY {
-	float x; 
+    float x; 
     float y;
 };
 
 class Circle {
     FloatXY centre;
-    float radio;
+    float radius;
 };
 ```
 
 
 Após a definição dos parâmetros que descrevem o círculo, é necessário criar os métodos que implementam as funções pretendidas. A primeira função a ser implementada é o construtor da classe circulo:
 ```cpp
-    Circle(const FloatXY* centre, float radio) {
+    Circle(const FloatXY* centre, float radius) {
         this->centre = *centre;
-        this->radio = radio;
+        this->radius = radius;
     }
 ```
 
@@ -62,8 +62,8 @@ $$ C = 2 \pi r $$
 No entanto, o valor do raio do círculo já faz parte da própria classe ``Circle``. Assim, podemos usar esta variável da classe sem a necessidade de a passar como parâmetro da função:
 
 ```cpp
-    float perimeter(float radio){
-        return (float)(2 * PI * radio);
+    float perimeter(float radius){
+        return (float)(2 * PI * radius);
     }
 ```
 
@@ -71,7 +71,7 @@ Contudo, o valor do raio do circulo já faz parte da própria classe ``Circle``.
 
 ```cpp
     float perimeter(){
-        return (float)(2 * PI * radio);
+        return (float)(2 * PI * radius);
     }
 ```
 
@@ -91,7 +91,7 @@ $$ A = \pi r^2\ $$
 Desta forma, a implementação desta função pode ser feita da seguinte forma:
 ```cpp
     float area(){
-        return (float)(PI * pow(radio, 2));
+        return (float)(PI * pow(radius, 2));
     }
 ```
 Onde ``pow`` corresponde à função da biblioteca cmath e segue a seguinte sintaxe:
@@ -121,10 +121,10 @@ Para aumentar/reduzir o tamanho de um círculo é preciso alterar o tamanho do s
 
 ```cpp
 	float resize(float zoom) {
-		float new_radio = radio * zoom;
-		if (new_radio > 0) {
-			radio = new_radio;
-			return radio;
+		float new_radius = radius * zoom;
+		if (new_radius > 0) {
+			radius = new_radius;
+			return radius;
 		}
 		return 0;
 	}
@@ -145,7 +145,7 @@ Assim, é necessário um segundo circulo de referência para que possa ser calcu
 		float dx = centre.x - c->centre.x;
 		float dy = centre.y - c->centre.y;
 		float centersDistance = (float)sqrt(pow(dx, 2) + pow(dy, 2));
-		return abs(centersDistance - radio - c->radio);
+		return abs(centersDistance - radius - c->radius);
 	}
 ```
 
