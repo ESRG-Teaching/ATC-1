@@ -51,7 +51,7 @@ Como o valor do comprimento do lado já faz parte da própria classe ``Sqare``, 
 ### 3. Calcular a área do quadrado
 A área de um quadrado é dada pela fórmula:
 
-$$ A=side*side* $$ 
+$$ A=side*side $$ 
 
 Que se traduz na seguinte implementação:
 ```cpp
