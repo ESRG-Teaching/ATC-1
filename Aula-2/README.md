@@ -25,14 +25,18 @@ O primeiro passo em definir uma classe é considerar os detalhes que a descrevem
 
 ```cpp
 class Square {
-    ...
+    float x;
+    float y;
+    float side;
 };
 ```
 Após definir os parâmetros que descrevem o quadrado, precisamos criar os métodos que implementam as funções desejadas. O primeiro a ser implementado é o construtor da classe:
 
 ```cpp
-    Square(...) {
-        ...
+    Square(float x, float y, float side) {
+        this->x = x;
+        this->y = y;
+        this->side = side;
     }
 ```
 
@@ -43,8 +47,8 @@ $$ P=4×side $$
 
 Como o valor do comprimento do lado já faz parte da própria classe ``Sqare``, podemos usar esta variável da classe sem a necessidade de a passar como parâmetro para a função:
 ```cpp
-    float perimeter(...){
-       ...
+    float perimeter(){
+        return side * 4;
     }
 ```
 
@@ -55,8 +59,8 @@ $$ A=side*side $$
 
 Que se traduz na seguinte implementação:
 ```cpp
-	float area(...) {
-		...
+	float area() {
+		return side * side;
 	}
 ```
 
@@ -65,23 +69,25 @@ Neste exercício, vamos assumir que mover o quadrado consiste em transladá-lo c
 
 Assim, a função terá dois parâmetros de entrada que correspondem ao deslocamento a ser adicionado às coordenadas do ponto de referência do quadrado:
 ```cpp
-	void move(...) {
-		...
+	void move(float dx, float dy) {
+		x += dx;
+		y += dy;
 	}
 ```
 ### 5. Comparar dois quadrados
 Para comparar dois quadrados, podemos simplesmente comparar os comprimentos dos lados. Se um lado for maior que o outro, o quadrado com o lado maior é maior. A implementação desta função pode ser feita da seguinte forma:
 ```cpp
-	float compareWith(...) {
-		...
+	float compareWith(Square s) {
+		return side - s.side;
 	}
 ```
 
 ### 6. Verificar se um ponto está dentro do quadrado
 Para determinar se um ponto está dentro de um quadrado, devemos verificar se as coordenadas do ponto estão dentro dos limites do quadrado. Isso pode ser feito calculando metade do comprimento do lado e verificando se a diferença absoluta entre as coordenadas do ponto e o centro do quadrado é menor ou igual a metade do comprimento do lado:
 ```cpp
-    bool containsPoint(...) {
-            ...
+    bool containsPoint(double pointX, double pointY) {
+            float halfSide = side / 2;
+            return abs(pointX - x) <= halfSide && abs(pointY - y) <= halfSide;
         }
 ```
 
@@ -95,3 +101,25 @@ Primeiro, vamos começar por definir a lógica da interface. Uma possível solu�
 5. O programa compara o primeiro quadrado com o segundo e imprime se o primeiro quadrado é maior ou menor que o segundo.
 6. O utilizador é convidado a inserir as coordenadas de um ponto (X, Y).
 7. O programa verifica se o ponto está dentro do quadrado e imprime o resultado.
+
+### 8. Diagrama UML
+```txt
++---------------------------------+
+|            Square               |
++---------------------------------+
+| - x: float                      |
+| - y: float                      |
+| - side: float                   |
++---------------------------------+
+| + Square(x: float, y: float,    |
+|   side: float)                  |
+| + perimeter(): float            |
+| + area(): float                 |
+| + move(dx: float, dy: float):   |
+|   void                          |
+| + compareWith(s: Square): float |
+| + containsPoint(pointX: double, |
+|   pointY: double): bool         |
++---------------------------------+
+```
+
