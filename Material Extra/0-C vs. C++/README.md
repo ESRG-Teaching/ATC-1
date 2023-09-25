@@ -1,31 +1,31 @@
 
 # Principais diferenças entre C e C++
 
-| Feature                     | C                                      | C++                                                   |
+| Feature                     |                   C                    |                          C++                          |
 | :-------------------------- | :------------------------------------: | :---------------------------------------------------: |
-| **Programming Paradigm**    | Procedural programming                 | Multi-paradigm (Procedural, Object-Oriented, Generic) |
-| **Function Overloading**    | Not supported                          | Supported                                             |
-| **Operator Overloading**    | Not supported                          | Supported                                             |
-| **Classes and Objects**     | Not supported                          | Supported                                             |
-| **Inheritance**             | Not supported                          | Supported                                             |
-| **Polymorphism**            | Not supported                          | Supported (Through Virtual Functions)                 |
-| **Encapsulation**           | Not supported                          | Supported                                             |
-| **Abstraction**             | Not supported                          | Supported                                             |
-| **Templates**               | Not supported                          | Supported                                             |
-| **Namespaces**              | Not supported                          | Supported                                             |
-| **Header Files**            | Use `.h` extension (e.g., `stdio.h`)   | Use `.h` extension (e.g., `cstdio`)                   |
-| **Standard I/O**            | `printf()`, `scanf()`                  | `cout`, `cin`, `cerr`, `clog`                         |
-| **Memory Management**       | Manual (malloc, free)                  | Manual (new, delete)                                  |
-| **Error Handling**          | Primarily via return values and errno  | Exception Handling (try, catch, throw)                |
-| **Preprocessor Directives** | Extensively used                       | Used, but less frequently                             |
-| **Type Casting**            | Traditional C-style casting            | Additional C++-style casting operators                |
-| **C Standard Library**      | Standard C Library (e.g., `<stdio.h>`) | C Standard Library (e.g., `<cstdio>`)                 |
-| **C++ Standard Library**    | Limited (C++-style headers available)  | Extensive Standard Template Library (STL)             |
-| **File I/O**                | `fopen()`, `fclose()`, etc.            | `std::fstream` classes and stream operators           |
-| **Friend Functions**        | Not supported                          | Supported                                             |
-| **Default Arguments**       | Not supported                          | Supported in function declarations                    |
-| **Function Prototypes**     | Optional                               | Mandatory                                             |
-| **Forward Declarations**    | Must be used for functions             | Can also be used for classes                          |
+| **Programming Paradigm**    |         Procedural programming         | Multi-paradigm (Procedural, Object-Oriented, Generic) |
+| **Function Overloading**    |                  :x:                   |                  :white_check_mark:                   |
+| **Operator Overloading**    |                  :x:                   |                  :white_check_mark:                   |
+| **Classes and Objects**     |                  :x:                   |                  :white_check_mark:                   |
+| **Inheritance**             |                  :x:                   |                  :white_check_mark:                   |
+| **Polymorphism**            |                  :x:                   |    :white_check_mark: (Through Virtual Functions)     |
+| **Encapsulation**           |                  :x:                   |                  :white_check_mark:                   |
+| **Abstraction**             |                  :x:                   |                  :white_check_mark:                   |
+| **Templates**               |                  :x:                   |                  :white_check_mark:                   |
+| **Namespaces**              |                  :x:                   |                  :white_check_mark:                   |
+| **Header Files**            |  Use `.h` extension (e.g., `stdio.h`)  |          Use `.h` extension (e.g., `cstdio`)          |
+| **Standard I/O**            |         `printf()`, `scanf()`          |             `cout`, `cin`, `cerr`, `clog`             |
+| **Memory Management**       |         Manual (malloc, free)          |                 Manual (new, delete)                  |
+| **Error Handling**          | Primarily via return values and errno  |        Exception Handling (try, catch, throw)         |
+| **Preprocessor Directives** |            Extensively used            |               Used, but less frequently               |
+| **Type Casting**            |      Traditional C-style casting       |        Additional C++-style casting operators         |
+| **C Standard Library**      | Standard C Library (e.g., `<stdio.h>`) |         C Standard Library (e.g., `<cstdio>`)         |
+| **C++ Standard Library**    | Limited (C++-style headers available)  |       Extensive Standard Template Library (STL)       |
+| **File I/O**                |      `fopen()`, `fclose()`, etc.       |      `std::fstream` classes and stream operators      |
+| **Friend Functions**        |                  :x:                   |                  :white_check_mark:                   |
+| **Default Arguments**       |                  :x:                   |      :white_check_mark: in function declarations      |
+| **Function Prototypes**     |                Optional                |                       Mandatory                       |
+| **Forward Declarations**    |       Must be used for functions       |             Can also be used for classes              |
 
 # Principais diferenças entre C e C++ (Código)
 
